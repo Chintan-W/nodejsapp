@@ -11,7 +11,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node q2.js"  },
+    "start": "node q2.js"
+  },
   "author": "",
   "license": "ISC",
   "description": ""
