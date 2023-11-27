@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car List</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <form action="/api/cars/search" method="GET">
+    <label for="searchQuery">Search by Invoice ID:</label>
+    <input type="text" id="searchQuery" name="searchQuery" required>
+    <button type="submit">Search</button>
+  </form>
+  <table>
+      <tr>
+        <th>InvoiceNo</th>
+        <th>Image</th>
+        <th>Manufacturer</th>
+        <th>Class</th>
+        <th>Sales (in thousands)</th>
+        <th>Year Resale Value</th>
+        <th>Vehicle Type</th>
+        <th>Price (in thousands)</th>
+        <th>Engine Size</th>
+        <th>Horsepower</th>
+        <th>Wheelbase</th>
+        <th>Width</th>
+        <th>Length</th>
+        <th>Curb Weight</th>
+        <th>Fuel Capacity</th>
+        <th>Fuel Efficiency</th>
+        <th>Latest Launch</th>
+        <th>Power Perf Factor</th>
+      </tr>
+    {{#each cars}}
+    {{#each this}}
+    {{#everyThird @index}}
+        <tr>
+          <td>{{this.InvoiceNo}}</td>
+          <td><img src="{{this.image}}" alt="Car Image" style="max-width: 100px;"></td>
+          <td>{{this.Manufacturer}}</td>
+          <td>{{this.class}}</td>
+          <td>{{this.Sales_in_thousands}}</td>
+          <td>{{this.__year_resale_value}}</td>
+          <td>{{this.Vehicle_type}}</td>
+          <td>{{this.Price_in_thousands}}</td>
+          <td>{{this.Engine_size}}</td>
+          <td>{{this.Horsepower}}</td>
+          <td>{{this.Wheelbase}}</td>
+          <td>{{this.Width}}</td>
+          <td>{{this.Length}}</td>
+          <td>{{this.Curb_weight}}</td>
+          <td>{{this.Fuel_capacity}}</td>
+          <td>{{this.Fuel_efficiency}}</td>
+          <td>{{this.Latest_Launch}}</td>
+          <td>{{this.Power_perf_factor}}</td>
+        </tr>
+        {{/everyThird}}
+      {{/each}}
+    {{/each}}
+  </table>
+
+</body>
+</html>
