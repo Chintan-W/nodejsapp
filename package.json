@@ -11,9 +11,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "node q2.js",
-    "start": "MONGODB_URI=mongodb+srv://bchintan99:chintan@cluster0.lbtbsd2.mongodb.net/asn4"
-  },
+    "start": "node q2.js"  },
   "author": "",
   "license": "ISC",
   "description": ""
